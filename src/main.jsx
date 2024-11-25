@@ -6,22 +6,32 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import ListedBooks from './pages/ListedBooks.jsx'
 import PagestoRead from './pages/PagestoRead.jsx'
+import MainLayout from './layout/MainLayout.jsx'
 
 const router = createBrowserRouter([
   {
     path:'/',
-    element:<Home></Home>
+    element:<MainLayout></MainLayout>,
+    children:[
+                  {
+                    path:'/',
+                    element:<Home></Home>
+                  },
+                  
+                  {
+                    path:'/ListedBooks',
+                    element:<ListedBooks></ListedBooks>
+                  },
+
+                  {
+                      path:'/PagestoRead',
+                      element:<PagestoRead></PagestoRead>
+                  }
+             ]
+    
   },
   
-    {
-      path:'/ListedBooks',
-      element:<ListedBooks></ListedBooks>
-    },
-
-      {
-        path:'/PagestoRead',
-        element:<PagestoRead></PagestoRead>
-      }
+    
 
 ])
 createRoot(document.getElementById('root')).render(
