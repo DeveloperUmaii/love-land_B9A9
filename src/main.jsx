@@ -7,6 +7,7 @@ import Home from './pages/Home.jsx'
 import ListedBooks from './pages/ListedBooks.jsx'
 import PagestoRead from './pages/PagestoRead.jsx'
 import MainLayout from './layout/MainLayout.jsx'
+import Booksdetails from './pages/Booksdetails.jsx'
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,8 @@ const router = createBrowserRouter([
     children:[
                   {
                     path:'/',
-                    element:<Home></Home>
+                    element:<Home></Home>,
+                    loader: () => fetch('blogs.json'),
                   },
                   
                   {
@@ -26,6 +28,11 @@ const router = createBrowserRouter([
                   {
                       path:'/PagestoRead',
                       element:<PagestoRead></PagestoRead>
+                  },
+
+                  {
+                      path:'/Booksdetails',
+                      element:<Booksdetails></Booksdetails>
                   }
              ]
     
