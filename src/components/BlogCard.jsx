@@ -1,26 +1,47 @@
+// import PropTypes from 'prop-types';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
+const BlogCard = blog => {
 
-const BlogCard = () => {
+    
+    const { id,cover,title, tags, writers_name, books_genre, books_rating } = blog;
+    
+    // console.log(blog?.blog?.id);
+
+    
+    // {`/blog/${id}`}
     return (
-        <a href="/Booksdetails"  className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
-        <article className="flex flex-col dark:bg-gray-50">
-            <a rel="noopener noreferrer" href="/Booksdetails" aria-label="Te nulla oportere reprimique his dolorum">
-                <img alt="" className="object-cover w-full h-52 dark:bg-gray-500" src="https://source.unsplash.com/200x200/?fashion?1" />
-            </a>
-            <div className="flex flex-col flex-1 p-6">
-                <a rel="noopener noreferrer" href="/Booksdetails" aria-label="Te nulla oportere reprimique his dolorum"></a>
-                <a rel="noopener noreferrer" href="/Booksdetails" className="text-xs tracking-wider uppercase hover:underline dark:text-violet-600">{blogs.books_genre}</a>
-                <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">{blogs[0].title}</h3>
-                <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-600">
-                    <span>{blogs.published_date}</span>
-                    <span>{blogs.books_rating}</span>
+
+        <Link to={`/Booksdetails/${blog?.blog?.id}`} className='card bg-base-100 w-96 shadow-xl p-5 hover:scale-105'>
+            
+                <figure className=''>
+                    <img className='rounded-lg'
+                         src={blog?.blog?.cover} />
+                </figure>
+                <div className="card-actions justify-start py-5">
+                        <div className="badge badge-outline border-none font-bold bg-[#22be0a3b] text-[#23BE0A]">{blog?.blog?.tags[0]}</div>
+                        <div className="badge badge-outline border-none font-bold bg-[#22be0a3b] text-[#23BE0A]">{blog?.blog?.tags[1]}</div>
                 </div>
-            </div>
-        </article> {/* Grid_Box-01  */}
+                <h1 className='text-2xl font-semibold'>{blog?.blog?.title}</h1>
+                <p className='text-lg font-semibold border-b border-dashed   pb-6 pt-2'>{blog?.blog?.writers_name}</p>
+                
+                    <div className="flex justify-between">
+                        <div className="">
+                            <p className='font-semibold'>{blog?.blog?.books_genre}</p>
+                        </div>
+                        <div className=" flex gap-1">
+                            <p className='font-semibold'>{blog?.blog?.books_rating}</p>
+                            <p>⭐</p>
+                            <img src="" alt="" />
+                        </div>
+                    </div>
+            
+        </Link>
 
 
-    </a> 
     );
 };
-
+        // BlogCard.PropTypes = {
+        // blog: PropTypes.object.isRequired   }
 export default BlogCard;

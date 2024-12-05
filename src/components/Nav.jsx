@@ -9,7 +9,7 @@ const Nav = () => {
 
                 <h1 className='font-bold text-3xl'>Book Vibe</h1>
             </div>
-            <div className="navbar-center hidden lg:flex">
+            <div className="navbar-center  flex">
                 <ul className="menu menu-horizontal px-1">
                     <NavLink to='/' className={({isActive})=>isActive?'btn-sm mx-5 btn btn-outline bg-[#ffffff] border-[#23BE0A] hover text-[#23BE0A] font-medium':'mx-5 text-[#00000080] font-semibold pt-2'}>Home</NavLink>
                     <NavLink to='/ListedBooks' className={({isActive})=>isActive?'btn-sm mx-5 btn btn-outline bg-[#ffffff] border-[#23BE0A] hover text-[#23BE0A] font-medium':'mx-5 text-[#00000080] font-semibold pt-2'}>listed Books</NavLink>
