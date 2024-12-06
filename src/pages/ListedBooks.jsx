@@ -1,61 +1,46 @@
-import { useEffect, useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
-import { getreadSttorage } from "../forStoraeg/storage";
-//import ListedBlogCard from "../components/ListedBlogCard";
+import { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 
 const ListedBooks = () => {
-    const blogs = useLoaderData();
-    const [tabIndex, setTabIndex] = useState (0)
-    const [readedBlogs, setReadedeBlogs] = useState([]);
-    useEffect ( () => {
-        const storedReadIds = getreadSttorage();
-        if(blogs.length > 0 ){
-            // const blogsReaded = blogs.filter(blog => storedReadIds.includes(blog.id))
-            const blogsReaded = [];
-            for ( const id of storedReadIds) {
-                const blog = blogs.find(blog => blog.id === id );
-                if(blog){
-                    blogsReaded.push(blog)
-                }
-            }
-            setReadedeBlogs(blogsReaded);
-            //console.log(blogs,storedReadIds, blogsReaded,);
-            console.log(blogsReaded);
-        }
+    const [tabIndex, setTabIndex] = useState(0); // ট্যাবের ইনডেক্স স্টেট
 
-    }, [])
+    const handleTabClick = (index) => {
+        setTabIndex(index);  // ট্যাব ইনডেক্স সেট
+    };
+
     return (
-        
-<div>
-            <h1>Listed Books:{readedBlogs.length}</h1>
- <div role="tablist" className="tabs tabs-lifted flex">
+        <div>
 
-  <Link onClick={() => setTabIndex(1)} className={`tab ${tabIndex === 1 ? 'w-3/12 tab-active':'w-9/12' }`}>Read Books
-
-
-  </Link>
+            <div className="bg-[#1b1b1b17] rounded-2xl mx-16 my-4 mb-12 flex justify-center shadow-xl">
+                <h1 className="text-6xl font-bold py-5 ">B  o  o  k  s</h1>
+            </div>
 
 
-  <Link onClick={() => tabIndex(0)} className={`tab ${tabIndex === 0 ? 'w-3/12 tab-active':'w-9/12' }`}>WishList Books</Link>
-</div>
+            {/* ট্যাব সিলেক্টরের জন্য */}
+            <div role="tablist" className="tabs tabs-lifted flex  ">
+                {/* "Read Books" ট্যাব */}
+                <Link 
+                    to='' 
+                    onClick={() => handleTabClick(0)} // ট্যাব ইনডেক্স ০ সেট
+                    className={`tab ${tabIndex === 0 ? ' w-9/12 tab-active ' : 'w-3/12'}`}
+                >
+                     <h1 className={ `${tabIndex === 0 ?'text-3xl font-bold text-[#328EFF]  px-32 my-2 border-x-2 border-[#328EFF] ' :'text-xl font-medium text-[#191a19af]' }`}>R e a d e d</h1>
+                </Link>
+                
+                {/* "WishList Books" ট্যাব */}
+                <Link 
+                    to='wishlist' 
+                    onClick={() => handleTabClick(1)} // ট্যাব ইনডেক্স ১ সেট
+                    className={`tab ${tabIndex === 1 ? 'w-9/12 tab-active' : 'w-3/12'}`}
+                >   <h1 className={ `${tabIndex === 1 ?'text-3xl font-bold text-[#32ff32] border-x-2 px-32 my-2 border-[#32ff32] ' :'text-xl font-medium text-[#191a19af]' }`}>W i s h L i s t  B o o k s</h1>
+                    
+                </Link>
+            </div>
 
-
-    {/* <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-center flex-nowrap dark:bg-gray-100 dark:text-gray-800">
-         <Link to=''   
-        className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 0 ? 'border border-b-0 ' : 'border-b'  }rounded-t-lg dark:border-gray-600 dark:text-gray-900`}> 
-
-            <span></span>
-        </Link>
-        <Linkto={`WishList`}  className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 1 ? 'border border-b-0' : 'border-b'  } rounded-t-lg dark:border-gray-600 dark:text-gray-900`}>
-            <span></span>
-        </Link>
-    </div>*/}
-
-   
-{ readedBlogs.map(blog =>
-            <div>       <h1>{blog.title}</h1>       </div>)
-      }
-       
-</div>);};
+            {/* নেস্টেড রাউট রেন্ডার */}
+            <Outlet />
+        </div>
+    );
+};
 
 export default ListedBooks;

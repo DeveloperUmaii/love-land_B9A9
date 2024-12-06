@@ -1,3 +1,5 @@
+
+//import ReadingList from './ReadingList';
 const PagestoRead = () => {
     return (
         <div>
@@ -6,6 +8,9 @@ const PagestoRead = () => {
             </div> */}
             
             <h1>Pages to Read</h1>
+            {/* <ReadingList></ReadingList> */}
+           
+            
         </div>
     );
 };

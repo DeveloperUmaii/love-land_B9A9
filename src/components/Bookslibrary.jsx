@@ -21,13 +21,7 @@ const Bookslibrary = () => {
 
                     <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
                         {
-                            safeBlogs.length > 0 ? (
-                                safeBlogs.map(blog => (
-                                    <BlogCard blog={blog} key={blog.id} />
-                                ))
-                            ) : (
-                                window.location.reload()
-                            )
+                            safeBlogs.map(blog => (<BlogCard blog={blog} key={blog.id} />))
                         }
                     </div>
                 </div>
