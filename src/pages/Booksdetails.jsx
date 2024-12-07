@@ -15,9 +15,9 @@ const Booksdetails = () => {
     const blog = blogs.find(blog => blog.id === idIn);
     // console.blog(blogs)
 
-    const addReadingList = () => { savereaddata(idIn); toast("Save read data !"); }
+    const addReadingList = () => { savereaddata(idIn); toast("Save to Read list!"); }
 
-    const addwishList = () => { saveWISHdata(idIn); toast("Wow so easy !"); }
+    const addwishList = () => { saveWISHdata(idIn); toast("Save to wish list!"); }
 
 
 
