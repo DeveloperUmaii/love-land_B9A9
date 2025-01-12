@@ -30,7 +30,7 @@ const BlogCard = blog => {
                 <div className="badge badge-outline border-none font-bold bg-[#22be0a3b] text-[#23BE0A]">{blog?.blog?.location[0]}</div>
                 <div className="badge badge-outline border-none font-bold bg-[#22be0a3b] text-[#23BE0A]"> {blog?.blog?.location[1]}</div>
             </div>
-            <h1 className='text-2xl font-semibold text-[#fff] bg-[#23BE0A] pl-3 pb-1 rounded underline underline-offset-8'>{blog?.blog?.estate_title}</h1>
+            <h1 className='text-2xl font-semibold text-[#fff] bg-[#23BE0A] pl-3 pb-1 rounded underline underline-offset-4'>{blog?.blog?.estate_title}</h1>
             <div className="flex justify-between">
                 <p className='text-lg font-semibold border-b border-dashed  pb-6 pt-2 text-[#252525ce]'>#Segment : <span className='border border-[#23BE0A] rounded text-[#23BE0A] px-2 text-sm font-bold'>{blog?.blog?.segment_name}</span></p>
                 <p className='text-[#f00a0a] text-lg font-bold border-b border-dashed  pb-6 pt-2  '>For : <span className='text-[#fff] text-base bg-[#f00a0a] px-3 py-0.5 rounded font-bold '>{blog?.blog?.price}</span></p>
