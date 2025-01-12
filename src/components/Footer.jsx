@@ -7,9 +7,9 @@ const Footer = () => {
                 <aside>
 
                     <p className=' text-[#000000cb] '>
-                        ACME Industries Ltd.
+                        LoVE .Land Ltd.
                         <br />
-                        Providing reliable tech since 1992
+                        Providing reliable shalter since 2003
                     </p>
                 </aside>
                 <nav>
