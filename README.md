@@ -1,8 +1,24 @@
-# React + Vite
+### website name : LoVE .Land
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+live site link : [LoVE .Land]().
 
-Currently, two official plugins are available:
+live site link : []().
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## npm package
+
+- firebase
+- prop-types
+- sweetalert2
+- react-icons
+- tailwind
+
+
+## Implement of 3 packages
+
+- [react-hook-form](https://react-hook-form.com/)
+- [animate.css](https://animate.style/)
+- [AOS-animation](https://michalsnik.github.io/aos/)
+- [ Swiper slider](https://swiperjs.com/react)
+# Assignment project
+- batch-09
+- Assignment-09

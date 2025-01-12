@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Nav from "../components/Nav";
+//import FirebaseProvider from "../FirebaseProvider/FirebaseProvider";
 const MainLayout = () => {
     return (
         <div className=" ">

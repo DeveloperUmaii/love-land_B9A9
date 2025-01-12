@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+import Footer from '../components/Footer';
 
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 
@@ -30,34 +31,31 @@ export default function App() {
 
   return (
     <div className="">
-          <div className="">
-            <h1 className='   drop-shadow-xl text-center text-5xl font-bold rounded-lg mx-96 p-4 bg-[#5dff2c] text-[#ffffff]'>Chart for reading page </h1>
-            
-          </div>
+        {/* Chat GTP Code */}
+        {/* <!-- About Us Component --> */}
+<div class="bg-green-100 px-20 py-10 rounded-lg  ">
+    <h2 class="text-3xl font-semibold text-center text-gray-800 mb-10">About Us</h2>
+    <p class="text-lg text-gray-600 mb-4">
+        We are an agriculture-based organization, aiming to raise awareness about agricultural land, gardens, and farms.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-1 gap-10">
+        <div class="bg-white p-4 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-green-600">Agricultural Land</h3>
+            <p class="text-gray-500">We work with environmentally-friendly land management practices and introduce modern technologies and innovations to farmers.</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-green-600">Gardens</h3>
+            <p class="text-gray-500">We contribute to the development of garden farming with new methods and research-based plant production.</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-green-600">Farms</h3>
+            <p class="text-gray-500">We provide modern technology and special training and support to farmers in farm management.</p>
+        </div>
+    </div>
+</div>
 
-          <div className=' rounded-xl m-10 border border-[#2020202d] p-7 py-10 bg-[#2020201a]'>
-            <BarChart
-              width={1220}
-              height={400}
-              data={chartData}
-              margin={{
-                top: 20,
-                right: 30,
-                left: 20,
-                bottom: 5,
-              }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip formatter={(value, name, props) => [value, props.payload.title]} />
-              <Bar dataKey="value" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
-                {chartData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
-                ))}
-              </Bar>
-            </BarChart>
-          </div>
+ 
+          <Footer></Footer>
     </div>
 
   );
